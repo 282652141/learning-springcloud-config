@@ -1,0 +1,62 @@
+spring:
+  profiles:
+    active: dev
+
+---
+#dev 环境配置
+spring:
+  profiles: dev
+  application:
+    name: servicepower9005
+
+server:
+  port: 9005
+
+# eureka配置 客户端注册进eureka服务列表内
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8888.com:8888/eureka
+  instance:
+    instance-id: servicepower9005 #此实例注册到eureka服务端的唯一的实例ID
+    prefer-ip-address: true #是否显示IP地址
+    lease-renewal-interval-in-seconds: 30 #eureka客户需要多长时间发送心跳给eureka服务器，表明它仍然活着,默认为30 秒 (与下面配置的单位都是秒)
+    lease-expiration-duration-in-seconds: 90 #Eureka服务器在接收到实例的最后一次发出的心跳后，需要等待多久才可以将此实例删除，默认为90秒
+
+# 服务的info详细信息信息(k,v)形式
+info:
+  app:
+    name: servicepower9005
+    version: 1.0
+    company:
+      name: dev.com
+      address: dev
+---
+#test环境配置
+spring:
+  profiles: test
+  application:
+    name: servicepower9005
+
+server:
+  port: 9006
+
+# eureka配置 客户端注册进eureka服务列表内
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8888.com:8888/eureka
+  instance:
+    instance-id: servicepower9005 #此实例注册到eureka服务端的唯一的实例ID
+    prefer-ip-address: true #是否显示IP地址
+    lease-renewal-interval-in-seconds: 30 #eureka客户需要多长时间发送心跳给eureka服务器，表明它仍然活着,默认为30 秒 (与下面配置的单位都是秒)
+    lease-expiration-duration-in-seconds: 90 #Eureka服务器在接收到实例的最后一次发出的心跳后，需要等待多久才可以将此实例删除，默认为90秒
+
+# 服务的info详细信息信息(k,v)形式
+info:
+  app:
+    name: servicepower9005
+    version: 1.0
+    company:
+      name: test.com
+      address: test
