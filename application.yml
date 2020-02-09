@@ -13,4 +13,4 @@ spring:
 spring:
   profiles: test #测试环境
   application:
-    name: springcloud-demo-dev
+    name: springcloud-demo-test
